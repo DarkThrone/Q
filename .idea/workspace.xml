@@ -41,19 +41,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.markdown" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="README.markdown" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="693" selection-end="693" vertical-scroll-proportion="0.0">
+            <state line="4" column="19" selection-start="84" selection-end="84" vertical-scroll-proportion="0.102564104">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Q-1.0-test.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Q-1.0-test.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/unit/Q-1.0-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="38" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.87278104">
+            <state line="60" column="38" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -82,8 +82,8 @@
         <option value="$PROJECT_DIR$/test/unit/Q-test.js" />
         <option value="$PROJECT_DIR$/src/Q.js" />
         <option value="$PROJECT_DIR$/src/Q-1.0.min.js" />
-        <option value="$PROJECT_DIR$/README.markdown" />
         <option value="$PROJECT_DIR$/test/unit/Q-1.0-test.js" />
+        <option value="$PROJECT_DIR$/README.markdown" />
       </list>
     </option>
   </component>
@@ -291,16 +291,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.markdown">
+    <entry file="file://$PROJECT_DIR$/test/unit/Q-1.0-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="693" selection-end="693" vertical-scroll-proportion="0.0">
+        <state line="60" column="38" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/Q-1.0-test.js">
+    <entry file="file://$PROJECT_DIR$/README.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="38" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.87278104">
+        <state line="4" column="19" selection-start="84" selection-end="84" vertical-scroll-proportion="0.102564104">
           <folding />
         </state>
       </provider>
