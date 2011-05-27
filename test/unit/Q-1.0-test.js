@@ -29,8 +29,6 @@ test('Size & isEmpty consistency Test', function(){
     q.enqueue(array);
     q.enqueue(date);
 
-    q.debug();
-
     equals(q.isEmpty(), false, "The queue is not empty anymore");
 
     equals(q.size(), 5, "Size displays the correct length of the queue");
@@ -38,7 +36,6 @@ test('Size & isEmpty consistency Test', function(){
     //dequeue all the elements
     q.dequeue();
     q.dequeue();
-    q.debug();
     q.dequeue();
     q.dequeue();
     q.dequeue();
@@ -59,7 +56,7 @@ test('Size & isEmpty consistency Test', function(){
 });
 
 test('Enqueueing, dequeueing & peeking Consistency Test', function(){
-    expect(20);
+    expect(25);
 
     //let's create a queue
     var q = Q();
@@ -81,31 +78,45 @@ test('Enqueueing, dequeueing & peeking Consistency Test', function(){
     q.enqueue(number);
     equals(q.size(), 1, 'First item enqueued correctly');
     //now test if is the SAME element
-    strictEqual(q.peek(), number, 'q.peek() is number');
+    strictEqual(q.peek(), number, 'q.peek() points to the top');
     q.enqueue(string);
     equals(q.size(), 2, 'Second item enqueued correctly');
-    strictEqual(q.peek(), string, 'q.peek() is string');
+    strictEqual(q.peek(), number, 'q.peek() points to the top');
     q.enqueue(bool);
     equals(q.size(), 3, 'Third item enqueued correctly');
-    strictEqual(q.peek(), bool, 'q.peek() is bool');
+    strictEqual(q.peek(), number, 'q.peek()  points to the top');
     q.enqueue(array);
     equals(q.size(), 4, 'Fourth item enqueued correctly');
-    deepEqual(q.peek(), array, 'q.peek() is array');
+    deepEqual(q.peek(), number, 'q.peek()  points to the top');
     q.enqueue(date);
     equals(q.size(), 5, 'Fifth item enqueued correctly');
-    strictEqual(q.peek(), date, 'q.peek() is date');
+    strictEqual(q.peek(), number, 'q.peek()  points to the top');
 
+    var t;
     //Now we start dequeueing elements
-    q.dequeue();
+    q.debug();
+    t = q.dequeue();
     equals(q.size(), 4, 'Fifth item deenqueued correctly');
-    q.dequeue();
+    strictEqual(t, number, 'dequeue returns correct elem');
+    q.debug();
+    t = q.dequeue();
     equals(q.size(), 3, 'Fourth item deenqueued correctly');
-    q.dequeue();
+    strictEqual(t, string, 'dequeue returns correct elem');
+    q.debug();
+    t = q.dequeue();
     equals(q.size(), 2, 'Third item deenqueued correctly');
-    q.dequeue();
+    strictEqual(t, bool, 'dequeue returns correct elem');
+    q.debug();
+    t = q.dequeue();
     equals(q.size(), 1, 'Second item deenqueued correctly');
-    q.dequeue();
+    strictEqual(t, array, 'dequeue returns correct elem');
+    q.debug();
+    t = q.dequeue();
+    q.debug();
     equals(q.size(), 0, 'First item deenqueued correctly');
+    console.log(t);
+    console.log(date);
+    equals(t, date, 'dequeue returns correct elem');
 
     //Now the queue is empty again
     ok(q.isEmpty(), "q.isEmpty still works");

@@ -35,39 +35,40 @@
  */
 var Q = function(){
                 var q = [], //The actual queue
-                    l = 0; //The length, size & offset of the queue
+                    h = 0, //The length, size & offset of the queue
+                    s = 0;
                 return {
                     /**
                      * returns the size of the queue
                      * @return size The size of the queue
                      */
                     size: function(){
-                        return l>0 ? l : 0;
+                        return s<0?0:s;
                     },
                     /**
                      * Returns the element that is in the top of the queue. If the queue is empty returns 'undefined'
                      * @return o An element that is at the top of the queue
                      */
                     peek: function(){
-                        return q[l-1];
+                        return q[h];
                     },
                     /**
                      * Dequeues and element and returns it. If the queue is empty returns 'undefined'
                      * @return o An element that is at the top of the queue
                      */
                     dequeue: function(){
-                        if(l < q.length*0.9){
+                        if(--s < q.length*0.9){
                              //Remove unnecessary and empty elements
-                            q = q.slice(0,l);
+                            q = q.slice(h),h=0;
                         }
-                        return q[--l];
+                        return q[h++];
                     },
                     /**
                      * Enqueues an element
                      * @param o
                      */
                     enqueue: function(o){
-                        q[l++] = o;
+                        q[s++] = o;
                     },
                     /**
                      * If the queue is empty returns true, otherwise false
@@ -75,19 +76,20 @@ var Q = function(){
                      *         False if there is an element
                      */
                     isEmpty: function(){
-                        return l <= 0;
+                        return s <= 0;
                     },
                     debug: function(){
                         console.log("===================================");
                         console.log("////Dumping debug information//////");
                         console.log("===================================");
                         console.log("Length of the array:       "+ q.length);
-                        console.log("Length of the collection:  "+ l);
+                        console.log("Length of the collection:  "+ s);
+                        console.log("Header is:                 "+ h);
                         console.log("===================================");
                         console.log("////Collection detailed information");
                         console.log("===================================");
-                        for(var i = 0; i < q.length; i++){
-                            console.log("Index " + i + " contains: " + q[i] + (i < l ? ' TRUE' : ' FALSE'));
+                        for(var i = h; i < q.length; i++){
+                            console.log("Index " + i + " contains: " + q[i]/* + (i < s ? ' TRUE' : ' FALSE')*/);
                         }
                         console.log("===================================");
                         console.log("////End of dump////////////////////");
